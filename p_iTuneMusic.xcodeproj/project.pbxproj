@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		048AF65120F1E9BA00B234BF /* TrackModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048AF65020F1E9BA00B234BF /* TrackModel.swift */; };
-		048AF65520F1EFA500B234BF /* TrackItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048AF65420F1EFA500B234BF /* TrackItemCell.swift */; };
+		048AF65520F1EFA500B234BF /* TrackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048AF65420F1EFA500B234BF /* TrackCell.swift */; };
 		04D842B920F1E5730041ABF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D842B820F1E5730041ABF5 /* AppDelegate.swift */; };
 		04D842BB20F1E5730041ABF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D842BA20F1E5730041ABF5 /* ViewController.swift */; };
 		04D842BE20F1E5730041ABF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D842BC20F1E5730041ABF5 /* Main.storyboard */; };
@@ -18,7 +18,7 @@
 
 /* Begin PBXFileReference section */
 		048AF65020F1E9BA00B234BF /* TrackModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackModel.swift; sourceTree = "<group>"; };
-		048AF65420F1EFA500B234BF /* TrackItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackItemCell.swift; sourceTree = "<group>"; };
+		048AF65420F1EFA500B234BF /* TrackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackCell.swift; sourceTree = "<group>"; };
 		04D842B520F1E5730041ABF5 /* p_iTuneMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = p_iTuneMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D842B820F1E5730041ABF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D842BA20F1E5730041ABF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,7 +42,7 @@
 		048AF65620F1EFAE00B234BF /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				048AF65420F1EFA500B234BF /* TrackItemCell.swift */,
+				048AF65420F1EFA500B234BF /* TrackCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -160,7 +160,7 @@
 				048AF65120F1E9BA00B234BF /* TrackModel.swift in Sources */,
 				04D842BB20F1E5730041ABF5 /* ViewController.swift in Sources */,
 				04D842B920F1E5730041ABF5 /* AppDelegate.swift in Sources */,
-				048AF65520F1EFA500B234BF /* TrackItemCell.swift in Sources */,
+				048AF65520F1EFA500B234BF /* TrackCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

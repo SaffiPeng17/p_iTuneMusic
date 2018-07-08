@@ -1,5 +1,5 @@
 //
-//  TrackItemCell.swift
+//  TrackCell.swift
 //  p_iTuneMusic
 //
 //  Created by Saffi on 2018/7/8.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class TrackItemCell: UITableViewCell {
+class TrackCell: UITableViewCell {
 
     @IBOutlet var albumCover: UIImageView!
     @IBOutlet var trackName: UILabel!
-    @IBOutlet var artistName: UILabel!
     @IBOutlet var collectionName: UILabel!
     
     override func awakeFromNib() {
