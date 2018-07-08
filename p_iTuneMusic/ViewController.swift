@@ -13,11 +13,16 @@ class ViewController: UIViewController {
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tracksTableView: UITableView!
-
+    @IBOutlet var loadingView: UIView!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    
     var trackArray = [Track]()
     var images = [UIImage?]() {
         didSet {
             if trackArray.count > 0, images.count == trackArray.count {
+                loadingView.isHidden = true
+                activityIndicator.stopAnimating()
+
                 DispatchQueue.main.async {
                     self.tracksTableView.reloadData()
                 }
@@ -50,7 +55,6 @@ class ViewController: UIViewController {
             decoder.dateDecodingStrategy = .iso8601
             if let data = data, let tracks = try? decoder.decode(TrackData.self, from: data) {
                 result(tracks.results)
-                print(tracks.resultCount)
             } else {
                 result([])
             }
@@ -84,13 +88,16 @@ extension ViewController: UISearchBarDelegate {
     //When click the "Search" button on keyboard,
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+        activityIndicator.startAnimating()
+        loadingView.isHidden = false
+        
         trackArray = []
         images = []
         fetchAPI(searchStr: searchBar.text!) { tracks in
             self.trackArray = tracks
             for track in tracks {
                 self.getImage(url: track.artworkUrl100) { isSuccess in
-                    print(isSuccess)
+//                    print(isSuccess)
                 }
             }
         }

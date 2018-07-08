@@ -31,7 +31,8 @@
                                 <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableFooterView" contentMode="scaleToFill" id="eVk-K3-pYH">
+                                <color key="sectionIndexBackgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="QyM-lE-oHr">
                                     <rect key="frame" x="0.0" y="108" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -97,11 +98,41 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="BSy-LZ-7Bu"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KiS-sS-q59">
+                                <rect key="frame" x="147.5" y="293" width="80" height="80"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="hZh-IV-vEp">
+                                        <rect key="frame" x="15" y="15" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="j2F-v6-A4T"/>
+                                            <constraint firstAttribute="width" secondItem="hZh-IV-vEp" secondAttribute="height" multiplier="1:1" id="kPp-MS-qC7"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.75204302229999997" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="hZh-IV-vEp" firstAttribute="centerY" secondItem="KiS-sS-q59" secondAttribute="centerY" id="UtY-W0-XSf"/>
+                                    <constraint firstAttribute="width" secondItem="KiS-sS-q59" secondAttribute="height" multiplier="1:1" id="dhU-XK-pWx"/>
+                                    <constraint firstAttribute="width" constant="80" id="vnq-mr-dAL"/>
+                                    <constraint firstItem="hZh-IV-vEp" firstAttribute="centerX" secondItem="KiS-sS-q59" secondAttribute="centerX" id="w8m-Fm-pwh"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KiS-sS-q59" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="CEa-ub-OcZ"/>
+                            <constraint firstItem="KiS-sS-q59" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nRc-Yu-hJw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="hZh-IV-vEp" id="dlV-bR-x7R"/>
+                        <outlet property="loadingView" destination="KiS-sS-q59" id="0Vh-lf-7XT"/>
                         <outlet property="searchBar" destination="Lgf-VR-eFe" id="5Be-19-am2"/>
                         <outlet property="tracksTableView" destination="8EQ-IT-uJs" id="jES-c9-tFw"/>
                     </connections>
