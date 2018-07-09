@@ -12,6 +12,7 @@ class TrackCell: UITableViewCell {
 
     @IBOutlet var albumCover: UIImageView!
     @IBOutlet var trackName: UILabel!
+    @IBOutlet var artistName: UILabel!
     @IBOutlet var collectionName: UILabel!
     
     override func awakeFromNib() {

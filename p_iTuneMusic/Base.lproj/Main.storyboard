@@ -71,8 +71,13 @@
                                                             <rect key="frame" x="78" y="0.0" width="267" height="60"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHS-sC-fGP">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="267" height="41"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="267" height="22"/>
                                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Period" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brf-ai-JeI">
+                                                                    <rect key="frame" x="0.0" y="24" width="267" height="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Period" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oP-BE-qka">
@@ -95,6 +100,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="albumCover" destination="gOM-Ho-87q" id="HmJ-bX-crY"/>
+                                            <outlet property="artistName" destination="brf-ai-JeI" id="7JX-L6-RQM"/>
                                             <outlet property="collectionName" destination="6oP-BE-qka" id="RAd-gl-FCY"/>
                                             <outlet property="trackName" destination="zHS-sC-fGP" id="dHy-fe-aXK"/>
                                         </connections>

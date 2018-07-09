@@ -20,8 +20,7 @@ class ViewController: UIViewController {
     var images = [UIImage?]() {
         didSet {
             if trackArray.count > 0, images.count == trackArray.count {
-                loadingView.isHidden = true
-                activityIndicator.stopAnimating()
+                controlLoadingView(isShown: false)
 
                 DispatchQueue.main.async {
                     self.tracksTableView.reloadData()
@@ -46,7 +45,15 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
 
-    //MARK: functions
+    //MARK: - functions
+    func controlLoadingView(isShown: Bool) {
+        DispatchQueue.main.async {
+            self.loadingView.isHidden = !isShown
+            isShown ? self.activityIndicator.startAnimating() : self.activityIndicator.stopAnimating()
+        }
+    }
+
+    //MARK: - URLSession functions
     func fetchAPI(searchStr: String, result: @escaping ([Track]) -> Void) {
         let urlstr = "https://itunes.apple.com/search?term=\(searchStr)&media=music"
         let url = URL(string: urlstr.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
@@ -88,12 +95,18 @@ extension ViewController: UISearchBarDelegate {
     //When click the "Search" button on keyboard,
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        activityIndicator.startAnimating()
-        loadingView.isHidden = false
+        controlLoadingView(isShown: true)
         
         trackArray = []
         images = []
         fetchAPI(searchStr: searchBar.text!) { tracks in
+            guard tracks.count > 0 else {
+                self.controlLoadingView(isShown: false)
+                let alert = UIAlertController(title: "通知", message: "搜尋不到任何歌曲資料！", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
+            }
             self.trackArray = tracks
             for track in tracks {
                 self.getImage(url: track.artworkUrl100) { isSuccess in
@@ -115,6 +128,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "trackcell", for: indexPath) as! TrackCell
         cell.albumCover.image = images[indexPath.row]
         cell.trackName.text = trackArray[indexPath.row].trackName
+        cell.artistName.text = trackArray[indexPath.row].artistName
         cell.collectionName.text = trackArray[indexPath.row].collectionName
 
         return cell
