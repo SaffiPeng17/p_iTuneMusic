@@ -2,6 +2,12 @@
 
 A practice project to fetch iTune Music data.
 
+| ![app record](./ScreenShots/input_search_word.jpg) | ![app record](./ScreenShots/search_result.jpg) | ![app record](./ScreenShots/app_recording.gif) |
+|---|---|---|
+
+[Demo Video](https://www.youtube.com/watch?v=g7d0KIZZJvo) (Youtube)
+<br><br>
+
 It is a simple App that used to search the music which is in iTunes Music. When you input some keyword, and the app will find the related tracks back and list results on tableView under the search bar. And if you tap the track on the list, it will play the preview track.
 
 
@@ -15,8 +21,3 @@ It is a simple App that used to search the music which is in iTunes Music. When 
 [How to play mp3 audio from URL in ios swift](https://stackoverflow.com/questions/34563329/how-to-play-mp3-audio-from-url-in-ios-swift)
 
 
-<video width="800" height="600" controls>
-  <source src="https://www.youtube.com/watch?v=rzweCr7FU4k" type="video/mp4">
-</video>
-
-[![IMAGE ALT TEXT HERE](./ScreenShots/utube_image.jpg)](https://www.youtube.com/watch?v=rzweCr7FU4k)
