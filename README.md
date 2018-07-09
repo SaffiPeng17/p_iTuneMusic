@@ -5,7 +5,7 @@ A practice project to fetch iTune Music data.
 | ![app record](./ScreenShots/input_search_word.jpg) | ![app record](./ScreenShots/search_result.jpg) | ![app record](./ScreenShots/app_recording.gif) |
 |---|---|---|
 
-[Demo Video](https://www.youtube.com/watch?v=g7d0KIZZJvo) (Youtube)
+[Demo Video](https://www.youtube.com/watch?v=g7d0KIZZJvo) (Youtube): include playing preview track
 <br><br>
 
 It is a simple App that used to search the music which is in iTunes Music. When you input some keyword, and the app will find the related tracks back and list results on tableView under the search bar. And if you tap the track on the list, it will play the preview track.
